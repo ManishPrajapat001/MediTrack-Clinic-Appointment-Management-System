@@ -65,4 +65,8 @@ public class Appointment {
     public double getDoctorFee() {
         return doctor.getConsultationFee();
     }
+
+    public Patient getPatient() {
+        return patient;
+    }
 }

@@ -2,7 +2,7 @@ package Entity;
 
 import java.time.LocalDateTime;
 
-public class BillSummary {
+public final class BillSummary {
     private final String billId;
     private final String appointmentId;
     private final double totalAmount;
