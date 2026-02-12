@@ -5,7 +5,7 @@ public class Doctor extends Person {
     private Speciality speciality;
     private double consultationFee;
 
-    public Doctor(Integer personId,
+    public Doctor(String personId,
                   String name,
                   String email,
                   String phoneNumber,

@@ -9,7 +9,7 @@ public class Patient extends Person {
     private LocalDate dob;
     private List<String> medicalHistory;
 
-    public Patient(Integer personId,
+    public Patient(String personId,
                    String name,
                    String email,
                    String phoneNumber,

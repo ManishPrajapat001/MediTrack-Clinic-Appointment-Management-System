@@ -1,11 +1,11 @@
 package util;
 
 public class IdGenerator {
-    private static int currentPersonId = 0;
+    private static Integer currentDataId = 0;
 
-    public static int getCurrentPersonId() {
-        currentPersonId++;
-        return currentPersonId;
+    public static String generateID(String type) {
+        currentDataId++;
+        return type +Integer.toString(currentDataId);
     }
 
 

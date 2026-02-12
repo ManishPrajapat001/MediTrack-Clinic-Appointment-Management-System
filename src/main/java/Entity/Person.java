@@ -3,19 +3,19 @@ package Entity;
 
 public abstract class Person {
 
-    private final int personId;
+    private final String personId;
     private String name;
     private String email;
     private String phoneNumber;
 
-    public Person(int personId, String name, String email, String phoneNumber) {
+    public Person(String personId, String name, String email, String phoneNumber) {
         this.personId = personId;
         this.name = name;
         this.email = email;
         this.phoneNumber = phoneNumber;
     }
 
-    public Integer getPersonId() {
+    public String getPersonId() {
         return personId;
     }
 

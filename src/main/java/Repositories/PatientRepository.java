@@ -14,7 +14,7 @@ public class PatientRepository {
                               String email,
                               String phoneNumber,
                               LocalDate dob){
-        Integer person_id = IdGenerator.getCurrentPersonId();
+        String person_id = IdGenerator.generateID("PATIENT");
         Patient patient = new Patient(person_id,name,email,phoneNumber,dob);
         patientDataStore.add(patient);
     }
@@ -23,7 +23,7 @@ public class PatientRepository {
         return patientDataStore.getAll();
     }
 
-    public Patient findById(Integer id){
+    public Patient findById(String id){
         for (Patient d : patientDataStore.getAll()) {
             if (d.getPersonId().equals(id)) {
                 return d;
@@ -32,7 +32,7 @@ public class PatientRepository {
         return null;
     }
 
-//    public boolean updateName(Integer id,String name){
+//    public boolean updateName(String id,String name){
 //
 //    }
 }

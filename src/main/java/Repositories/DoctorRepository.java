@@ -15,7 +15,7 @@ public class DoctorRepository {
                              String phoneNumber,
                              Speciality speciality,
                              double consultationFee){
-        Integer person_id = IdGenerator.getCurrentPersonId();
+        String person_id = IdGenerator.generateID("DOC");
         Doctor doctor = new Doctor(person_id,name,email,phoneNumber,speciality,consultationFee);
         doctorDataStore.add(doctor);
 //        return true;
@@ -25,7 +25,7 @@ public class DoctorRepository {
         return doctorDataStore.getAll();
     }
 
-    public Doctor findById(Integer id){
+    public Doctor findById(String id){
         for (Doctor d : doctorDataStore.getAll()) {
             if (d.getPersonId().equals(id)) {
                 return d;
