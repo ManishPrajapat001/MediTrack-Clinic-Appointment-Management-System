@@ -10,14 +10,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BillRepository {
-    final DataStore<Bill> billDataStore = new DataStore<>();
+    static final DataStore<Bill> billDataStore = new DataStore<>();
 
-    public void addBill(Appointment appointment){
+    public static void addBill(Appointment appointment){
         String bill_id = IdGenerator.generateID("BILL");
         Bill bill = new Bill(bill_id,appointment);
     }
 
-    public Bill getById(String billId) {
+    public static Bill getById(String billId) {
         for (Bill bill : billDataStore.getAll()) {
             if (bill.getBillId().equals(billId)) {
                 return bill;

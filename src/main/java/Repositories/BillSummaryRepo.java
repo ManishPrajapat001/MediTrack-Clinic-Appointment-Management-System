@@ -6,15 +6,15 @@ import util.DataStore;
 import java.util.List;
 
 public class BillSummaryRepo {
-    private final DataStore<BillSummary> billSummaryDataStore = new DataStore<>();
+    private static final DataStore<BillSummary> billSummaryDataStore = new DataStore<>();
 
 
-    public void addSummary(BillSummary billSummary) {
+    public static void addSummary(BillSummary billSummary) {
         billSummaryDataStore.add(billSummary);
     }
 
     // Get summary by billId
-    public BillSummary getByBillId(String billId) {
+    public static BillSummary getByBillId(String billId) {
         for (BillSummary s : billSummaryDataStore.getAll()) {
             if (s.getBillId().equals(billId)) {
                 return s;
@@ -24,7 +24,7 @@ public class BillSummaryRepo {
     }
 
     // Get all summaries
-    public List<BillSummary> getAllSummaries() {
+    public static List<BillSummary> getAllSummaries() {
         return billSummaryDataStore.getAll();
     }
 }

@@ -1,5 +1,7 @@
 package util;
 
+import java.time.LocalDate;
+
 public class Validator {
 
     public static boolean isValidEmail(String email){
@@ -15,5 +17,10 @@ public class Validator {
             }
         }
         return true;
+    }
+
+    public static boolean isValidDate(LocalDate dateOfAppointment) {
+
+        return dateOfAppointment.isAfter(LocalDate.now());
     }
 }

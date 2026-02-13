@@ -8,7 +8,7 @@ import util.IdGenerator;
 import java.util.List;
 
 public class DoctorRepository {
-    DataStore<Doctor> doctorDataStore = new DataStore<>();
+    static DataStore<Doctor> doctorDataStore = new DataStore<>();
 
     public void addDoctor(String name,
                              String email,
@@ -25,7 +25,7 @@ public class DoctorRepository {
         return doctorDataStore.getAll();
     }
 
-    public Doctor findById(String id){
+    public static Doctor findById(String id){
         for (Doctor d : doctorDataStore.getAll()) {
             if (d.getPersonId().equals(id)) {
                 return d;
