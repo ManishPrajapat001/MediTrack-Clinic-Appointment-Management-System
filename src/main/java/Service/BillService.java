@@ -6,24 +6,23 @@ import Entity.BillSummary;
 import Repositories.AppointmentRepository;
 import Repositories.BillRepository;
 import Repositories.BillSummaryRepo;
+import Exception.EntityNotFoundException;
 
 public class BillService {
 
-    public static void generateBill(String appointment_id){
+    public static void generateBill(String appointment_id) throws EntityNotFoundException {
         Appointment appointment = AppointmentRepository.findById(appointment_id);
         if(appointment == null){
-            System.out.println("Invalid appointment id");
-            return;
+            throw new EntityNotFoundException("Invalid appointment id");
         }
         BillRepository.addBill(appointment);
 
     }
 
-    public static void payBill(String bill_id){
+    public static void payBill(String bill_id) throws EntityNotFoundException {
         Bill bill = BillRepository.getById(bill_id);
         if(bill == null){
-            System.out.println("Invalid Bill Id");
-            return;
+            throw new EntityNotFoundException("Invalid Bill Id");
         }
         BillSummary billSummary = bill.generateBillSummary();
         BillSummaryRepo.addSummary(billSummary);
